@@ -244,5 +244,11 @@ window.I18N_DICTS.zh = {
 "ABS / PP / PE": "ABS / PP / PE",
 "GPPS / HIPS": "GPPS / HIPS",
 "TPE / soft parts": "TPE / 软胶件",
-"Food-safe and child-safety grades as required (subject to customer specs)": "按需提供食品级与儿童安全级材料（以客户规格为准）"
+"Food-safe and child-safety grades as required (subject to customer specs)": "按需提供食品级与儿童安全级材料（以客户规格为准）",
+"Skip to content": "跳到正文",
+"Choose language": "选择语言",
+"Menu": "菜单",
+"e.g. John Smith": "请输入您的姓名",
+"Company name": "公司名称",
+"Describe your part, material, tolerance, quantity, target price or deadline...": "请描述零件、材料、公差、数量、目标价格或交期..."
 };

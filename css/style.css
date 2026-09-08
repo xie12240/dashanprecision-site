@@ -22,9 +22,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-
 .brand img{width:44px;height:44px;border-radius:6px;object-fit:cover}
 .brand .bname{font-weight:800;color:var(--navy);line-height:1.15;font-size:1rem}
 .brand .btag{font-size:.68rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-nav ul{display:flex;gap:1.6rem;list-style:none}
-nav a{font-size:.92rem;font-weight:600;color:var(--ink)}
-nav a:hover{color:var(--accent2)}
+.nav > ul{display:flex;gap:1.2rem;list-style:none}
+.nav > ul a{font-size:.92rem;font-weight:600;color:var(--ink)}
+.nav > ul a:hover{color:var(--accent2)}
 .nav-cta{display:flex;align-items:center;gap:.8rem}
 .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:.4rem .6rem;font-size:1.2rem;cursor:pointer}
 /* hero */
@@ -110,8 +110,8 @@ footer a{color:var(--accent)}
   .process{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:680px){
-  .nav ul{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:1rem;border-bottom:1px solid var(--line)}
-  .nav ul.open{display:flex}
+  .nav > ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1rem;border-bottom:1px solid var(--line)}
+  .nav > ul.open{display:flex}
   .nav-toggle{display:block}
   .nav-cta .btn{display:none}
   .cards,.ind-grid,.gallery,.gallery.two{grid-template-columns:1fr}
@@ -121,7 +121,7 @@ footer a{color:var(--accent)}
   section{padding:54px 0}
 }
 
-nav ul a.active{color:var(--accent2);border-bottom:2px solid var(--accent2);padding-bottom:2px}
+.nav > ul a.active{color:var(--accent2);border-bottom:2px solid var(--accent2);padding-bottom:2px}
 
 /* floating whatsapp + mobile bottom CTA + inquiry band */
 .inq-band{background:var(--navy);color:#fff;padding:44px 0}
@@ -162,3 +162,27 @@ nav ul a.active{color:var(--accent2);border-bottom:2px solid var(--accent2);padd
 .lang-menu li a:hover{background:var(--light)}
 .lang-menu li a.active{color:var(--accent2);font-weight:700}
 @media(max-width:480px){.lang-btn .lang-cur{display:none}}
+
+:focus-visible{outline:3px solid #177a9b;outline-offset:3px}
+.skip-link{position:fixed;top:-100px;left:1rem;z-index:100;background:#fff;color:var(--navy);padding:.7rem 1rem;border:2px solid var(--navy)}
+.skip-link:focus{top:.5rem}
+.industry-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem}
+@media(max-width:680px){.industry-details{grid-template-columns:minmax(0,1fr)}}
+.contact-grid > *,.f-row > *{min-width:0}
+.cbox .row > span{min-width:0;overflow-wrap:anywhere}
+@media(min-width:681px) and (max-width:1100px){
+  .nav{height:auto;min-height:70px;flex-wrap:wrap;gap:.6rem;padding:.6rem 0}
+  .nav > ul{order:3;width:100%;justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:680px){
+  .nav{gap:.4rem}
+  .brand{min-width:0;gap:.4rem}
+  .brand .bname{font-size:.875rem}
+  .brand .btag{font-size:.625rem;letter-spacing:0}
+  .nav-toggle,.lang-btn{min-height:44px;flex-shrink:0}
+  .nav > ul a{display:block;padding:.35rem 0}
+  .field input,.field select,.field textarea{font-size:1rem}
+  .form{padding:1.1rem}
+  .wa-float{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}

@@ -1,15 +1,34 @@
 document.addEventListener('DOMContentLoaded',function(){
   var t=document.querySelector('.nav-toggle');
-  var m=document.querySelector('header nav ul');
-  if(t&&m){t.addEventListener('click',function(){m.classList.toggle('open');});}
+  var m=document.querySelector('header .nav > ul');
+  if(t&&m){
+    m.id='primary-menu';
+    t.setAttribute('aria-controls',m.id);
+    function closeMenu(){m.classList.remove('open');t.setAttribute('aria-expanded','false');}
+    closeMenu();
+    t.addEventListener('click',function(){
+      var open=m.classList.toggle('open');
+      t.setAttribute('aria-expanded',String(open));
+    });
+    m.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&m.classList.contains('open')){closeMenu();t.focus();}
+    });
+    document.addEventListener('click',function(e){if(!m.contains(e.target)&&!t.contains(e.target))closeMenu();});
+  }
 
   // 已选文件 → 显示"移除"按钮；点击可删除（FormSubmit 原生 multipart 上传）
   var att=document.getElementById('attachment');
   var clr=document.getElementById('clear-file');
   if(att&&clr){
-    function upd(){clr.style.display=att.files&&att.files.length>0?'inline-block':'none';}
+    function upd(){
+      var file=att.files&&att.files[0];
+      clr.style.display=file?'inline-block':'none';
+      att.setCustomValidity(file&&file.size>10*1024*1024?
+        (document.documentElement.lang==='zh'?'文件超过 10 MB，请缩小文件或通过邮件发送。':'This file exceeds 10 MB. Please use a smaller file or email it to us.'):'');
+    }
     att.addEventListener('change',upd);
-    clr.addEventListener('click',function(){att.value='';upd();});
+    clr.addEventListener('click',function(){att.value='';upd();att.focus();});
     upd();
   }
 
@@ -17,9 +36,14 @@ document.addEventListener('DOMContentLoaded',function(){
   // 文件会作为邮件附件发送；提交后跳转到站内感谢页。
   var form=document.getElementById('rfq');
   if(form){
+    var btn=form.querySelector('button[type="submit"]');
+    var idleLabel;
+    function restore(){if(btn){btn.disabled=false;if(idleLabel)btn.textContent=idleLabel;}form.removeAttribute('aria-busy');}
+    window.addEventListener('pageshow',restore);
     form.addEventListener('submit',function(){
-      var btn=form.querySelector('button[type="submit"]');
-      if(btn){btn.disabled=true;btn.textContent='Sending...';}
+      if(btn){idleLabel=btn.textContent;btn.disabled=true;btn.textContent=document.documentElement.lang==='zh'?'正在发送...':'Sending...';}
+      form.setAttribute('aria-busy','true');
+      window.setTimeout(restore,20000);
     });
   }
 });
