@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded',function(){
   var m=document.querySelector('header nav ul');
   if(t&&m){t.addEventListener('click',function(){m.classList.toggle('open');});}
   var form=document.getElementById('rfq');
+  var att=document.getElementById('attachment');var clr=document.getElementById('clear-file');
+  if(att&&clr){function upd(){clr.style.display=att.files&&att.files.length>0?'inline-block':'none';}
+    att.addEventListener('change',upd);clr.addEventListener('click',function(){att.value='';upd();});upd();}
   if(form){
     var fb=document.getElementById('form-fb');
     form.addEventListener('submit',function(e){
