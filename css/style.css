@@ -122,3 +122,23 @@ footer a{color:var(--accent)}
 }
 
 nav ul a.active{color:var(--accent2);border-bottom:2px solid var(--accent2);padding-bottom:2px}
+
+/* floating whatsapp + mobile bottom CTA + inquiry band */
+.inq-band{background:var(--navy);color:#fff;padding:44px 0}
+.inq-band .container{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.inq-band h3{color:#fff;margin-bottom:.3rem}
+.inq-band p{color:#cfe0ef;margin:0;max-width:600px;font-size:.95rem}
+.inq-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-ghost-inv{border:1px solid rgba(255,255,255,.7);color:#fff}
+.btn-ghost-inv:hover{background:rgba(255,255,255,.12)}
+.wa-float{position:fixed;right:18px;bottom:84px;z-index:60;background:#25D366;color:#fff;font-weight:700;padding:.7rem 1rem;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.22);font-size:.9rem;display:flex;align-items:center;gap:.45rem}
+.wa-float:hover{background:#1eb456;color:#fff}
+.m-cta{display:none}
+@media(max-width:680px){
+  body{padding-bottom:64px}
+  .m-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:59;background:#fff;border-top:1px solid var(--line);gap:8px;padding:8px}
+  .m-cta a{flex:1;text-align:center;padding:.7rem .5rem;border-radius:8px;font-weight:700;font-size:.9rem}
+  .m-cta a:first-child{background:var(--accent);color:#241a05}
+  .m-cta a:last-child{background:#25D366;color:#fff}
+  .wa-float{bottom:74px;right:12px}
+}
