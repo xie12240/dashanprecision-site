@@ -35,8 +35,12 @@
 <section>
   <div class="container">
     <div class="contact-grid">
-      <form class="form" id="rfq" action="https://formspree.io/f/mzebjnqp" method="POST">
-        <input type="hidden" name="_subject" value="RFQ from dashanprecision.com">
+      <form class="form" id="rfq" action="https://formsubmit.co/xie12240@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New RFQ - dashanprecision.com">
+        <input type="hidden" name="_next" value="https://www.dashanprecision.com/thanks.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="f-row">
           <div class="field"><label for="name">Your Name *</label><input id="name" name="name" type="text" required placeholder="e.g. John Smith"></div>
           <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Company name"></div>
@@ -54,13 +58,12 @@
         <div class="field"><label for="attachment">Drawing / file (optional)</label>
           <input id="attachment" name="attachment" type="file" accept=".step,.stp,.stl,.igs,.iges,.pdf,.dwg,.dxf,.zip,.rar,.jpg,.png">
           <button type="button" id="clear-file" style="display:none;margin-top:.4rem;background:none;border:1px solid #b3261e;color:#b3261e;border-radius:6px;padding:.3rem .8rem;cursor:pointer;font-size:.82rem">✕ Remove selected file</button>
-          <div class="hint">Formats accepted: STEP / STP / STL / IGES / PDF / DWG / DXF (max ~10 MB per file). No drawing? Just describe your part below.</div>
+          <div class="hint">Formats accepted: STEP / STP / STL / IGES / PDF / DWG / DXF (total max ~10 MB). No drawing? Just describe your part below.</div>
         </div>
         <div class="field"><label for="msg">Project details / message</label><textarea id="msg" name="message" placeholder="Describe your part, material, tolerance, quantity, target price or deadline..."></textarea>
           <div class="hint">🔒 Your drawing and data are treated as confidential; NDA available on request. Free DFM review &amp; quote — no commitment.</div>
         </div>
         <button class="btn btn-primary" type="submit">Send Inquiry</button>
-        <p id="form-fb" style="display:none;margin-top:.8rem;font-size:.9rem;font-weight:600"></p>
       </form>
       <aside>
         <div class="cbox">
