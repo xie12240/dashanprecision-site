@@ -5,13 +5,13 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 const root = path.dirname(fileURLToPath(import.meta.url));
 
-test("chat config is offline mock mode", () => {
+test("chat config points to the live https proxy", () => {
   const cfg = JSON.parse(fs.readFileSync(path.join(root, "chat-config.json"), "utf8"));
-  assert.equal(cfg.endpoint, "");
-  assert.equal(cfg.mock, true);
+  assert.ok(cfg.endpoint.startsWith("https://"), "endpoint must be https");
+  assert.equal(cfg.mock, false);
 });
 
-test("chat.js implements a local offline demo", () => {
+test("chat.js implements a local offline demo fallback", () => {
   const js = fs.readFileSync(path.join(root, "js/chat.js"), "utf8");
   assert.ok(js.includes("offlineMode"), "offlineMode marker missing");
   assert.ok(js.includes("offlineReply"), "offlineReply marker missing");
