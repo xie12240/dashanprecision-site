@@ -26,8 +26,9 @@ test("main.js loads chat but keeps the real inquiry form", () => {
   assert.ok(js.includes("FormSubmit"), "real FormSubmit form submission missing");
 });
 
-test("main.js posts inquiries to the CRM bridge without blocking the form", () => {
+test("main.js posts inquiries (with attachment) to the CRM bridge then resubmits", () => {
   const js = fs.readFileSync(path.join(root, "js/main.js"), "utf8");
   assert.ok(js.includes("/api/leads"), "CRM bridge endpoint missing");
-  assert.ok(js.includes("keepalive"), "keepalive flag missing");
+  assert.ok(js.includes("FormData"), "multipart FormData missing");
+  assert.ok(js.includes("form.submit()"), "native resubmit missing");
 });
