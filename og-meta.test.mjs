@@ -32,7 +32,7 @@ test("every page exposes Open Graph and Twitter cards", () => {
     assert.ok(image && image.startsWith("https://www.dashanprecision.com/"), `${page}: og:image missing or not absolute`);
     assert.equal(metaProp(content, "og:type"), "website", `${page}: og:type not website`);
     assert.equal(metaName(content, "twitter:card"), "summary_large_image", `${page}: twitter:card missing`);
-    assert.ok(metaProp(content, "twitter:image"), `${page}: twitter:image missing`);
+    assert.ok(metaName(content, "twitter:image"), `${page}: twitter:image missing`);
   }
 });
 
