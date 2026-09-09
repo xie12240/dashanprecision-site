@@ -25,3 +25,9 @@ test("main.js loads chat but keeps the real inquiry form", () => {
   assert.ok(!/Sandbox demo|沙箱演示/.test(js), "sandbox demo note leaked");
   assert.ok(js.includes("FormSubmit"), "real FormSubmit form submission missing");
 });
+
+test("main.js posts inquiries to the CRM bridge without blocking the form", () => {
+  const js = fs.readFileSync(path.join(root, "js/main.js"), "utf8");
+  assert.ok(js.includes("/api/leads"), "CRM bridge endpoint missing");
+  assert.ok(js.includes("keepalive"), "keepalive flag missing");
+});
