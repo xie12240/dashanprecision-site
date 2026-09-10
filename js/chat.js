@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   if (document.getElementById('ds-chat')) return;
-  var zh = document.documentElement.lang === 'zh';
+  var zh = (function(){ try { if (new URLSearchParams(location.search).get('lang') === 'zh') return true; return localStorage.getItem('dashan_lang') === 'zh'; } catch (e) { return false; } })();
   var text = zh ? {
     open:'大山24小时客服',title:'大山精密 24小时客服',close:'关闭客服',checking:'正在连接...',online:'客服已连接',offline:'客服暂时离线',busy:'正在回复...',
     intro:'您好！您想了解模具制造、注塑加工，还是报价所需资料？',
