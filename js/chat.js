@@ -5,20 +5,20 @@
   var text = zh ? {
     open:'大山24小时客服',title:'大山精密 24小时客服',close:'关闭客服',checking:'正在连接...',online:'客服已连接',offline:'客服暂时离线',busy:'正在回复...',
     intro:'您好！您想了解模具制造、注塑加工，还是报价所需资料？',
-    notice:'AI 回复仅供参考，报价与交期请向业务员确认。消息将交由 AI 服务处理，请勿发送机密图纸、密码或付款信息。',
+    notice:'如需正式报价或确认交期，请通过下方「提交询盘」或「联系业务员」与我们联系。',
     placeholder:'输入您的问题...',send:'发送',label:'您的问题',retry:'重新连接',quote:'提交询盘',human:'联系业务员',
-    failed:'暂时无法获得 AI 回复。请稍后重试，或通过下方入口联系业务员。',limit:'请将问题缩短至 2000 字以内。',
-    offlineHint:'客服当前为离线演示模式：所有回复都在本地生成，不会发送到任何服务器。请勿在对话中提供图纸、密码或付款信息。正式报价请通过下方“提交询盘”或“联系业务员”入口。',
-    offlineReply:'（离线演示）AI 服务暂未配置，所有回复均为本地占位内容。请通过下方“提交询盘”或“联系业务员”入口与我们沟通。',
+    failed:'暂时无法回复，请稍后重试，或通过下方入口联系业务员。',limit:'请将问题缩短至 2000 字以内。',
+    offlineHint:'客服暂时离线。正式报价请通过下方“提交询盘”或“联系业务员”入口。',
+    offlineReply:'（离线模式）客服暂不可用，请通过下方“提交询盘”或“联系业务员”入口与我们沟通。',
     samples:['报价需要什么资料？','模具交期多久？','能签保密协议吗？']
   } : {
     open:'24/7 Support',title:'DASHAN 24/7 Support',close:'Close assistant',checking:'Connecting...',online:'Connected',offline:'Currently offline',busy:'Replying...',
     intro:'Hello! How can I help with mold making, injection molding, or preparing a quote request?',
-    notice:'AI replies are informational. Confirm pricing and lead times with sales. Messages are processed by an AI service. Do not share confidential drawings, passwords or payment details.',
+    notice:'For a formal quote or to confirm lead times, please use the Request a quote or Contact sales buttons below.',
     placeholder:'Type your question...',send:'Send',label:'Your question',retry:'Reconnect',quote:'Request a quote',human:'Contact sales',
-    failed:'AI could not reply just now. Please try again later, or contact sales using the links below.',limit:'Please keep your question within 2,000 characters.',
-    offlineHint:'The assistant is in offline demo mode: replies are generated locally and never sent to any server. Please do not share drawings, passwords, or payment details here. For a real quote, use “Request a quote” or “Contact sales” below.',
-    offlineReply:'(Offline demo) The AI service is not configured. Replies shown here are local placeholders only. Please use “Request a quote” or “Contact sales” below to reach our team.',
+    failed:'Sorry, we could not reply just now. Please try again later, or contact sales using the links below.',limit:'Please keep your question within 2,000 characters.',
+    offlineHint:'Live chat is temporarily offline. For a real quote, use “Request a quote” or “Contact sales” below.',
+    offlineReply:'(Offline mode) Live chat is currently unavailable. Please use “Request a quote” or “Contact sales” below to reach our team.',
     samples:['What do you need for a quote?','What are your mold lead times?','Can you sign an NDA?']
   };
   var style = document.createElement('link');
