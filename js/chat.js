@@ -37,6 +37,11 @@
   var log = host.querySelector('.ds-log'), input = host.querySelector('#ds-input');
   var send = host.querySelector('.ds-send'), retry = host.querySelector('.ds-retry');
   var history = [], endpoint = '', busy = false, ready = false, connecting = false, offlineMode = false, offlineAnnounced = false;
+  // 领域知识引导：随每次请求带给 DeepSeek，补齐旧提示词缺失的交期/报价/诚实守则等关键事实。
+  var PRIME = [
+    { role: 'user', content: 'Remind me of DASHAN Precision\'s key facts for answering buyers.' },
+    { role: 'assistant', content: 'DASHAN Precision (Dongguan, China, founded 2021): production molds about 30-45 days after deposit, samples 5-10 days; quote only after seeing the drawing (free DFM review); never give a price without drawings; always reply in the customer\'s language including Chinese; never claim ISO certification or specific precision numbers. Contact: Xie Wendong, WhatsApp +86 181 2293 6992, xie12240@gmail.com.' }
+  ];
   launch.textContent = text.open; close.setAttribute('aria-label',text.close); close.title=text.close;
   host.querySelector('#ds-title').textContent=text.title;
   host.querySelector('.ds-notice').textContent=text.notice;
@@ -132,7 +137,7 @@
     if(offlineMode){offlineReply(value);return;}
     host.querySelector('.ds-human').href='https://wa.me/8618122936992?text='+encodeURIComponent('Hello DASHAN, '+value.slice(0,500));
     try {
-      var result=await request(endpoint+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:value,history:history.slice(-6)})},55000);
+      var result=await request(endpoint+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:value,history:PRIME.concat(history.slice(-6))})},55000);
       if(typeof result.reply!=='string'||!result.reply.trim())throw new Error('Empty reply');
       var reply=result.reply.slice(0,6000);
       message(reply,'assistant');history.push({role:'user',content:value},{role:'assistant',content:reply});
