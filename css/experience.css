@@ -1,0 +1,19 @@
+.reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.reveal.arrived{animation:arrive .8s both}@keyframes arrive{from{opacity:.2;transform:translateY(24px)}to{opacity:1;transform:none}}}
+.hero-emphasis{color:var(--accent)}
+.home-future .hero-inner::after{content:'';position:absolute;right:0;bottom:42px;width:160px;height:80px;border-right:1px solid #8feae488;border-bottom:1px solid #8feae488;pointer-events:none}
+.home-future .cards{counter-reset:capability}
+.home-future .card{position:relative;counter-increment:capability}
+.home-future .card::after{content:'0' counter(capability);position:absolute;top:28px;right:26px;font:12px monospace;letter-spacing:.14em;color:#8feae4}
+main>section:first-child:not(.hero){background:radial-gradient(ellipse at 85% 20%,#163d48 0%,#0b171e 65%)!important}
+main>section:first-child:not(.hero)>.container{padding:24px 0!important}
+section[id]{scroll-margin-top:150px}
+@media(min-width:961px) and (prefers-reduced-motion:no-preference){.home-future .hero-inner::after{animation:scan 5s ease-in-out infinite}@keyframes scan{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-28px)}}}
+.photo-open{position:absolute;inset:0;border:0;background:transparent;cursor:zoom-in;width:100%;height:100%}
+.photo-open::after{content:'↗';position:absolute;right:18px;top:18px;width:36px;height:36px;display:grid;place-items:center;border:1px solid #ffffff80;background:#091316b8;color:white;border-radius:50%;font-size:22px}
+.photo-dialog{margin:auto;width:min(1100px,94vw);max-height:92vh;padding:48px 16px 16px;background:#0c171c;border:1px solid #41717b;color:#fff;border-radius:12px}
+.photo-dialog::backdrop{background:#02070de8;backdrop-filter:blur(8px)}
+.photo-dialog img{width:100%;height:auto;max-height:72vh;object-fit:contain}
+.photo-dialog p{padding-top:12px}
+.photo-dialog>button{position:absolute;right:8px;top:3px;background:transparent;color:white;border:0;font-size:32px;width:44px;height:44px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
