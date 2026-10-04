@@ -152,7 +152,7 @@ footer a{color:var(--accent);text-decoration:underline;text-underline-offset:.18
 @media(max-width:680px){.nums .container{grid-template-columns:repeat(2,1fr)}}
 
 /* ===== 多语言切换 ===== */
-#lang-banner{position:fixed;top:78px;right:12px;z-index:81;max-width:calc(100% - 24px);border-radius:6px;background:#123653;color:#dbe6f0;text-align:center;font-size:.85rem;padding:.45rem .8rem}
+#lang-banner{position:fixed;top:78px;right:12px;z-index:49;max-width:calc(100% - 24px);border-radius:6px;background:#123653;color:#dbe6f0;text-align:center;font-size:.85rem;padding:.45rem .8rem}
 #lang-banner a{color:var(--accent);margin:0 .5rem;font-weight:600;text-decoration:underline}
 .lang-w{position:relative;display:inline-block}
 .lang-btn{display:flex;align-items:center;gap:.35rem;background:var(--light);border:1px solid var(--line);border-radius:999px;padding:.42rem .75rem;font-size:.84rem;color:var(--navy);cursor:pointer;font-family:inherit;font-weight:600}
