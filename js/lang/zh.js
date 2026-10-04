@@ -91,6 +91,8 @@ window.I18N_DICTS.zh = {
 "Project details / message": "项目详情 / 留言",
 "🔒 Your drawing and data are treated as confidential; NDA available on request. Free DFM review & quote — no commitment.": "您的图纸与资料严格保密；可按需签 NDA。免费 DFM 评审与报价——无需承担任何义务。",
 "Send Inquiry": "发送询盘",
+"A security check may appear after sending. Please complete it to finish your inquiry.": "发送后可能出现安全验证，请完成验证以提交询盘。",
+"You can also email your inquiry directly:": "您也可以直接发送询盘邮件至：",
 "Talk to us directly": "直接与我们沟通",
 "Direct contact, fast quotes — no middleman.": "直接对接、快速报价——无中间商。",
 "Xie Wendong": "谢文东",
