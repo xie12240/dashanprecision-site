@@ -125,11 +125,17 @@
     bar.id = 'lang-banner';
     bar.innerHTML = '🌐 本页可切换为简体中文 — <a href="#" data-go="zh">切换</a> · <a href="#" data-close="1">忽略</a>';
     document.body.insertBefore(bar, document.body.firstChild);
+    function positionBanner() {
+      var header = document.querySelector('header');
+      bar.style.top = ((header ? header.getBoundingClientRect().bottom : 0) + 8) + 'px';
+    }
+    positionBanner();
+    window.addEventListener('resize', positionBanner);
     bar.addEventListener('click', function (e) {
       var go = e.target.getAttribute && e.target.getAttribute('data-go');
       var close = e.target.getAttribute && e.target.getAttribute('data-close');
       if (go) { e.preventDefault(); selectLanguage(go); }
-      if (close) { try { localStorage.setItem('dashan_lang_banner', '1'); } catch (err) {} bar.remove(); }
+      if (close) { e.preventDefault(); try { localStorage.setItem('dashan_lang_banner', '1'); } catch (err) {} bar.remove(); window.removeEventListener('resize', positionBanner); }
     });
   }
 
