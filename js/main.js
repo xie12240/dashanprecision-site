@@ -1,4 +1,125 @@
-document.addEventListener('DOMContentLoaded',function(){
-  var chatScript=document.createElement('script');
-  chatScript.src='js/chat.js';chatScript.async=true;
-  document.body.appendChild(chatScript);   var t=document.querySelector('.nav-toggle');   var m=document.querySelector('header .nav > ul');   if(t&&m){     m.id='primary-menu';     t.setAttribute('aria-controls',m.id);     function closeMenu(){m.classList.remove('open');t.setAttribute('aria-expanded','false');}     closeMenu();     t.addEventListener('click',function(){       var open=m.classList.toggle('open');       t.setAttribute('aria-expanded',String(open));     });     m.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu();});     document.addEventListener('keydown',function(e){       if(e.key==='Escape'&&m.classList.contains('open')){closeMenu();t.focus();}     });     document.addEventListener('click',function(e){if(!m.contains(e.target)&&!t.contains(e.target))closeMenu();});   }    // 已选文件 → 显示"移除"按钮；点击可删除（FormSubmit 原生 multipart 上传）   var att=document.getElementById('attachment');   var clr=document.getElementById('clear-file');   if(att&&clr){     function upd(){       var file=att.files&&att.files[0];       clr.style.display=file?'inline-block':'none';       att.setCustomValidity(file&&file.size>10*1024*1024?         (document.documentElement.lang==='zh'?'文件超过 10 MB，请缩小文件或通过邮件发送。':'This file exceeds 10 MB. Please use a smaller file or email it to us.'):'');     }     att.addEventListener('change',upd);     clr.addEventListener('click',function(){att.value='';upd();att.focus();});     upd();   }    // 询盘表单：不做 AJAX 拦截，交给浏览器以 multipart 原生提交到 FormSubmit，   // 文件会作为邮件附件发送；提交后跳转到站内感谢页。   var form=document.getElementById('rfq');   if(form){     var btn=form.querySelector('button[type="submit"]');     var idleLabel;     function restore(){if(btn){btn.disabled=false;if(idleLabel)btn.textContent=idleLabel;}form.removeAttribute('aria-busy');}     window.addEventListener('pageshow',restore);     form.addEventListener('submit',function(){       if(btn){idleLabel=btn.textContent;btn.disabled=true;btn.textContent=document.documentElement.lang==='zh'?'正在发送...':'Sending...';}       form.setAttribute('aria-busy','true');       window.setTimeout(restore,20000);     }); form.addEventListener('submit',function(e){e.preventDefault();try{var fd=new FormData(form);fd.set('page',location.href);fd.set('lang',document.documentElement.lang||'en');fetch('https://dashan-chat.313321824.workers.dev/api/leads',{method:'POST',body:fd}).catch(function(){}).finally(function(){form.submit();});}catch(err){form.submit();}});   } });
+document.addEventListener('DOMContentLoaded', function () {
+  // chat.js is loaded once by the page's existing script tag.
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.querySelector('header .nav > ul');
+  if (toggle && menu) {
+    menu.id = 'primary-menu';
+    toggle.setAttribute('aria-controls', menu.id);
+
+    function closeMenu() {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    closeMenu();
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.classList.contains('open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+  }
+
+  // Keep FormSubmit's native multipart attachment upload and Remove control.
+  var attachment = document.getElementById('attachment');
+  var clearFile = document.getElementById('clear-file');
+  if (attachment && clearFile) {
+    function updateAttachment() {
+      var file = attachment.files && attachment.files[0];
+      clearFile.style.display = file ? 'inline-block' : 'none';
+      attachment.setCustomValidity(file && file.size > 10 * 1024 * 1024
+        ? (document.documentElement.lang === 'zh'
+          ? '文件超过 10 MB，请缩小文件或通过邮件发送。'
+          : 'This file exceeds 10 MB. Please use a smaller file or email it to us.')
+        : '');
+    }
+
+    attachment.addEventListener('change', updateAttachment);
+    clearFile.addEventListener('click', function () {
+      attachment.value = '';
+      updateAttachment();
+      attachment.focus();
+    });
+    updateAttachment();
+  }
+
+  var form = document.getElementById('rfq');
+  if (form) {
+    var button = form.querySelector('button[type="submit"]');
+    var idleLabel;
+    var submitting = false;
+    var restoreTimer;
+    var leadTimeoutMs = 8000;
+
+    function restore() {
+      window.clearTimeout(restoreTimer);
+      submitting = false;
+      if (button) {
+        button.disabled = false;
+        if (idleLabel) button.textContent = idleLabel;
+      }
+      form.removeAttribute('aria-busy');
+    }
+
+    window.addEventListener('pageshow', restore);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (submitting || !form.reportValidity()) return;
+
+      submitting = true;
+      if (button) {
+        idleLabel = button.textContent;
+        button.disabled = true;
+        button.textContent = document.documentElement.lang === 'zh'
+          ? '正在发送...'
+          : 'Sending...';
+      }
+      form.setAttribute('aria-busy', 'true');
+      restoreTimer = window.setTimeout(restore, 20000);
+
+      // Collect the existing Cloudflare lead, then submit to the unchanged
+      // FormSubmit action. A stalled lead request must not block the inquiry.
+      var controller = typeof AbortController !== 'undefined'
+        ? new AbortController()
+        : null;
+      var leadTimer;
+      var nativeSubmitted = false;
+
+      function submitNative() {
+        if (nativeSubmitted) return;
+        nativeSubmitted = true;
+        window.clearTimeout(leadTimer);
+        form.submit();
+      }
+
+      leadTimer = window.setTimeout(function () {
+        if (controller) controller.abort();
+        submitNative();
+      }, leadTimeoutMs);
+
+      try {
+        var data = new FormData(form);
+        data.set('page', location.href);
+        data.set('lang', document.documentElement.lang || 'en');
+        var options = { method: 'POST', body: data };
+        if (controller) options.signal = controller.signal;
+        fetch('https://dashan-chat.313321824.workers.dev/api/leads', options)
+          .then(submitNative, submitNative);
+      } catch (error) {
+        submitNative();
+      }
+    });
+  }
+});
