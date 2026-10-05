@@ -1,0 +1,531 @@
+{
+  "source_folder": "C:\\Users\\ZhuanZ1\\OneDrive\\Desktop\\大山精密科技有限公司",
+  "classification": "Owner-supplied authentic workshop photographs and company logo",
+  "derivative_processing": "EXIF orientation, proportional resizing and WebP encoding only; no generated content or retouching",
+  "originals": [
+    {
+      "source": "CNC加工区.jpg",
+      "file": "CNC加工区.jpg",
+      "sha256": "a04d69acb6d1835ab0613082bdf4a31c4f21ab269b1fbea80c2987c2acd4f515",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "CNC加工区实拍.jpg",
+      "file": "CNC加工区实拍.jpg",
+      "sha256": "becc567bb97b3381bc2d8b13629c4607539ad7b515d12ae9dccbd98e194c17eb",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "CNC加工区实拍01.jpg",
+      "file": "CNC加工区实拍01.jpg",
+      "sha256": "2d2f3aea8e254f1b76b4d095098a029113ead022775a22643fb9d876cb067ba6",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "LOOGO.JPG.png",
+      "file": "LOOGO.JPG.png",
+      "sha256": "f77c8b8ceb70d644cd2ff73116c34e8236cf2fe77224e9b31cff84a18370a06c",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source": "会议室.jpg",
+      "file": "会议室.jpg",
+      "sha256": "1cec1705100357fa3b8a844dbc86f9f43512ebf9f79ef77646edb594cc89e8e3",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "办公室.jpg",
+      "file": "办公室.jpg",
+      "sha256": "32402f4b0df4fdf1eba4578780f0f28833d640970b6345957c9de9d0cf55490a",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "工厂外实景图.jpg",
+      "file": "工厂外实景图.jpg",
+      "sha256": "e3f7e2c4ec63098d6c520e6a2d0835166985dab7a832df070a8da0f0c9d68438",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "模具打磨区.jpg",
+      "file": "模具打磨区.jpg",
+      "sha256": "41ed58f83991eac5db99f5569bcab202f7d1af84a4340919b62319b11742f826",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "模具精修区.jpg",
+      "file": "模具精修区.jpg",
+      "sha256": "e3282fc28e90070474a9487ab87661ff7a7a9da858037b1659517054ed59b78d",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "模具精修区01.jpg",
+      "file": "模具精修区01.jpg",
+      "sha256": "22ea7f768af1a6834b7e80c90c47a6fe694fed8eaa7e0e65b48bb92ea0b3f6e1",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "注塑机工作区.jpg",
+      "file": "注塑机工作区.jpg",
+      "sha256": "ae2c7d69b8589bf60b2bd515952679022fd46a1f1855d552ba797ca4ed966e00",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "注塑机工作区01.jpg",
+      "file": "注塑机工作区01.jpg",
+      "sha256": "77050ac1c2944b2f9a8971d616a043cd5815521d5e3e673e89b55641e5f0d9d3",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "注塑机工作区02.jpg",
+      "file": "注塑机工作区02.jpg",
+      "sha256": "f246988d477dfb0cc5892598bf40b92b4d385ae02122edba80d76210a95fb119",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "注塑机工作区03.jpg",
+      "file": "注塑机工作区03.jpg",
+      "sha256": "76e8d01ff579040ee2ead47f0a35d2e45c97dd8cf5aaa5be917d07b25371d95b",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "注塑机工作区04.jpg",
+      "file": "注塑机工作区04.jpg",
+      "sha256": "a0ce0f0acacd679af90dc4b6c8c89beeaedd7b376eabfbeca7c75c77d303d604",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "注塑机工作区05.jpg",
+      "file": "注塑机工作区05.jpg",
+      "sha256": "62aa2f407d3bfc77198ed30df66dc6c0a82fa580b568acb1882086f4cd29b21f",
+      "dimensions": [
+        3024,
+        4032
+      ]
+    },
+    {
+      "source": "磨床加工区.jpg",
+      "file": "磨床加工区.jpg",
+      "sha256": "aa98e718009af6849c5abd6e39d9d33ccd372f65d1af480678071e6d70888306",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "精密线割区.jpg",
+      "file": "精密线割区.jpg",
+      "sha256": "db2da1f577c75d931798aa75344837faa250871d13eccde4249637281cb03c24",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区.jpg",
+      "file": "车间工作区.jpg",
+      "sha256": "9081bb7d2277f35246d82853a08c95631145da66ed843a2636741ceb8c67339a",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区01.jpg",
+      "file": "车间工作区01.jpg",
+      "sha256": "90cfc5819acdc50f4c49abc24c234ac3a08b6e7c2744d9646fd9dc31d3da6073",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区02.jpg",
+      "file": "车间工作区02.jpg",
+      "sha256": "f99e76221262cfc4cb23799dd6f5f530dd849fa06e6edf00a77bf466fe364c1b",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区03.jpg",
+      "file": "车间工作区03.jpg",
+      "sha256": "c3f17bd0710cc7bf139ad75d084296b0454f44bfd64c01c356add63bf249112b",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区04.jpg",
+      "file": "车间工作区04.jpg",
+      "sha256": "6c46d0844915174420e2ec13de144bb3c46e10d83e968fe29f5e1272dbf4dd4c",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "车间工作区05.jpg",
+      "file": "车间工作区05.jpg",
+      "sha256": "77d1d3c5e4dde4219afa464d54a86a1f9000c650eeb975a76115b17e879032aa",
+      "dimensions": [
+        4032,
+        3024
+      ]
+    },
+    {
+      "source": "门头.png",
+      "file": "门头.png",
+      "sha256": "57a63871efa8deeb8aa21e82256d56727d4c629acb048e2124306d900b887b29",
+      "dimensions": [
+        1728,
+        2304
+      ]
+    }
+  ],
+  "derivatives": [
+    {
+      "slot": "workshop-hero",
+      "source": "车间工作区01.jpg",
+      "file": "workshop-hero-1600.webp",
+      "dimensions": [
+        1600,
+        1200
+      ],
+      "bytes": 327270,
+      "sha256": "df6d5abe7431207c0a27127963e570a5a79a266d1bb16e92b606e5dcb1d4993e"
+    },
+    {
+      "slot": "workshop-hero",
+      "source": "车间工作区01.jpg",
+      "file": "workshop-hero-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 145558,
+      "sha256": "35edfdf8a5f6ae7b014602983e3134fa761b7851de1f7553a6b140d40ddc5f38"
+    },
+    {
+      "slot": "workshop-hero",
+      "source": "车间工作区01.jpg",
+      "file": "workshop-hero-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 72120,
+      "sha256": "8cc66ca3fa4e38014815a98f110acd3314869c798c05f983cb4e4edf63708657"
+    },
+    {
+      "slot": "cnc",
+      "source": "CNC加工区实拍.jpg",
+      "file": "cnc-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 121288,
+      "sha256": "fe9d8cdff1e10ba1449755c30205d425a38c6f3c577b301b186dd1e19f7ceb84"
+    },
+    {
+      "slot": "cnc",
+      "source": "CNC加工区实拍.jpg",
+      "file": "cnc-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 59336,
+      "sha256": "55a47fb0a618fd4ecc70c97c83130fda08f42e952b69680ca46bff1eed4c7252"
+    },
+    {
+      "slot": "injection",
+      "source": "注塑机工作区.jpg",
+      "file": "injection-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 119564,
+      "sha256": "d6e3e653a723940c9c634aa16120db4fe4ef031b2d26e173d09250abde4ceb7f"
+    },
+    {
+      "slot": "injection",
+      "source": "注塑机工作区.jpg",
+      "file": "injection-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 59940,
+      "sha256": "723047b0b58a4fd8135c67e50744238b2dc183c5a7eccbf4b7c8dbdcb7da135b"
+    },
+    {
+      "slot": "wire-cut",
+      "source": "精密线割区.jpg",
+      "file": "wire-cut-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 102010,
+      "sha256": "2531478e9581b5be99ef29ce3b5caf52946a9d026d0bd7ec2139f82951296505"
+    },
+    {
+      "slot": "wire-cut",
+      "source": "精密线割区.jpg",
+      "file": "wire-cut-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 52164,
+      "sha256": "170dc549d929f59539261818e7c7bae9af922a9e56de6416c246751fa9ea3293"
+    },
+    {
+      "slot": "mold-finishing",
+      "source": "模具精修区.jpg",
+      "file": "mold-finishing-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 121130,
+      "sha256": "f1cc0ca8f0ad06424f1fd557bc7cb4438e2404a4c0aa63c9f4cf6f1e39a3645c"
+    },
+    {
+      "slot": "mold-finishing",
+      "source": "模具精修区.jpg",
+      "file": "mold-finishing-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 57266,
+      "sha256": "167977f2df55d887ea8f039d2f95a63c28924d0d14689ee2d828eeb8686e5c35"
+    },
+    {
+      "slot": "grinding",
+      "source": "磨床加工区.jpg",
+      "file": "grinding-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 121158,
+      "sha256": "99612594b9072f8c9118654ad2939bb1de57fd2eff2cee6762f50864c914b425"
+    },
+    {
+      "slot": "grinding",
+      "source": "磨床加工区.jpg",
+      "file": "grinding-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 58828,
+      "sha256": "418d2e0572a72d8b8e19c4bdb00347cf5c19ffdd859c6dd2d51a663ab9705c1d"
+    },
+    {
+      "slot": "exterior",
+      "source": "工厂外实景图.jpg",
+      "file": "exterior-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 117424,
+      "sha256": "7c0fd208271ad172b61e322025b6b19faffba81beca69c15f0d47be0ac7758e9"
+    },
+    {
+      "slot": "exterior",
+      "source": "工厂外实景图.jpg",
+      "file": "exterior-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 48192,
+      "sha256": "48240bdec17cee22d87499ea7521fd41f8dd20807ed4c0eff00c3b9161ab8c4e"
+    },
+    {
+      "slot": "gate",
+      "source": "门头.png",
+      "file": "gate-960.webp",
+      "dimensions": [
+        960,
+        1280
+      ],
+      "bytes": 186244,
+      "sha256": "92f5ba267dac42bdd7500ee717cc5c406c07e2df725956d4ede6664c4885eef7"
+    },
+    {
+      "slot": "gate",
+      "source": "门头.png",
+      "file": "gate-640.webp",
+      "dimensions": [
+        640,
+        853
+      ],
+      "bytes": 94544,
+      "sha256": "3afa2068abd0cc182f1536d06ce00ecf9c376d679e380191114b31da884d8f89"
+    },
+    {
+      "slot": "office",
+      "source": "办公室.jpg",
+      "file": "office-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 61578,
+      "sha256": "7885128ec57ff82fa813465646dc823bef519bc3d72381314fb078c4a1d1bfaa"
+    },
+    {
+      "slot": "office",
+      "source": "办公室.jpg",
+      "file": "office-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 33458,
+      "sha256": "7c045ee96700b6bd47c20b7c2226d99edca6bd5797667084b2ef877772146624"
+    },
+    {
+      "slot": "meeting",
+      "source": "会议室.jpg",
+      "file": "meeting-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 47062,
+      "sha256": "4cfe3bf5afbc09d9150d831f2053165a857c5b2f824cb418cf6ece372287f94e"
+    },
+    {
+      "slot": "meeting",
+      "source": "会议室.jpg",
+      "file": "meeting-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 25520,
+      "sha256": "793c45d6d8185d884ff36cc30fc608862e790251f6c3dbb60457acd2b90d3d51"
+    },
+    {
+      "slot": "mold-polishing",
+      "source": "模具打磨区.jpg",
+      "file": "mold-polishing-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 111500,
+      "sha256": "42af179a68b1980870f7e8e5728eea79712d071ceb1dd55ab9a63a85e95bec1e"
+    },
+    {
+      "slot": "mold-polishing",
+      "source": "模具打磨区.jpg",
+      "file": "mold-polishing-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 54462,
+      "sha256": "e98a7ad8bc6db9bb92e4570c05c2291278d822c7f64b45d1855ecb12e9ae05b6"
+    },
+    {
+      "slot": "workshop-team",
+      "source": "车间工作区04.jpg",
+      "file": "workshop-team-960.webp",
+      "dimensions": [
+        960,
+        720
+      ],
+      "bytes": 148028,
+      "sha256": "5c9da82a22bce3949b2a8740967398ceceaee923c1ee5cad1586d445611920c7"
+    },
+    {
+      "slot": "workshop-team",
+      "source": "车间工作区04.jpg",
+      "file": "workshop-team-640.webp",
+      "dimensions": [
+        640,
+        480
+      ],
+      "bytes": 74946,
+      "sha256": "0f6117678e6c911da4884d8dbc615305c7892441a2c348926e548efb44393804"
+    },
+    {
+      "slot": "logo",
+      "source": "LOOGO.JPG.png",
+      "file": "logo.webp",
+      "dimensions": [
+        240,
+        240
+      ],
+      "bytes": 11290,
+      "sha256": "bd45d1e3bcf0d2fd0b39203bf292ec234c745bc0763f73692556bfc14798f61b"
+    }
+  ],
+  "excluded": [
+    "AI生成图/注塑产品与模具摄影需求 (1).png",
+    "AI生成图/注塑产品与模具摄影需求 (2).png",
+    "AI生成图/注塑产品与模具摄影需求 (3).png",
+    "AI生成图/注塑产品与模具摄影需求 (4).png",
+    "AI生成图/注塑产品与模具摄影需求 (5).png",
+    "AI生成图/注塑产品与模具摄影需求 (6).png",
+    "公司的营业执照.jpg",
+    "大山精D A S H A N P R E C I S I O N T E C H N O L O G Y C O . , L T D .密公司简介_谢文东.PDF",
+    "大山精密公司简介-关总.pdf"
+  ]
+}

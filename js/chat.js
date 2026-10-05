@@ -3,22 +3,22 @@
   if (document.getElementById('ds-chat')) return;
   var zh = (function(){ try { if (new URLSearchParams(location.search).get('lang') === 'zh') return true; return localStorage.getItem('dashan_lang') === 'zh'; } catch (e) { return false; } })();
   var text = zh ? {
-    open:'大山24小时客服',title:'大山精密 24小时客服',close:'关闭客服',checking:'正在连接...',online:'客服已连接',offline:'客服暂时离线',busy:'正在回复...',
+    open:'询盘助手',title:'大山精密询盘助手',close:'关闭助手',checking:'正在连接...',online:'助手已连接',offline:'助手暂时离线',busy:'正在回复...',
     intro:'您好！您想了解模具制造、注塑加工，还是报价所需资料？',
-    notice:'如需正式报价或确认交期，请通过下方「提交询盘」或「联系业务员」与我们联系。',
-    placeholder:'输入您的问题...',send:'发送',label:'您的问题',retry:'重新连接',quote:'提交询盘',human:'联系业务员',
+    notice:'报价和交期请通过下方入口与车间直接确认。先简单描述项目即可，图纸和保密协议可在沟通后提供。',
+    placeholder:'输入您的问题...',send:'发送',label:'您的问题',retry:'重新连接',quote:'获取免费报价',human:'WhatsApp 联系工厂 — 通常 24 小时内回复',
     failed:'暂时无法回复，请稍后重试，或通过下方入口联系业务员。',limit:'请将问题缩短至 2000 字以内。',
-    offlineHint:'客服暂时离线。正式报价请通过下方“提交询盘”或“联系业务员”入口。',
-    offlineReply:'（离线模式）客服暂不可用，请通过下方“提交询盘”或“联系业务员”入口与我们沟通。',
+    offlineHint:'助手暂时离线。请通过下方“获取免费报价”或 WhatsApp 入口直接联系车间。',
+    offlineReply:'助手暂不可用。您的消息尚未发送给车间，请通过下方“获取免费报价”或 WhatsApp 入口与我们沟通。',
     samples:['报价需要什么资料？','模具交期多久？','能签保密协议吗？']
   } : {
-    open:'24/7 Support',title:'DASHAN 24/7 Support',close:'Close assistant',checking:'Connecting...',online:'Connected',offline:'Currently offline',busy:'Replying...',
+    open:'Ask the workshop',title:'DASHAN inquiry assistant',close:'Close assistant',checking:'Connecting...',online:'Connected',offline:'Currently offline',busy:'Replying...',
     intro:'Hello! How can I help with mold making, injection molding, or preparing a quote request?',
-    notice:'For a formal quote or to confirm lead times, please use the Request a quote or Contact sales buttons below.',
-    placeholder:'Type your question...',send:'Send',label:'Your question',retry:'Reconnect',quote:'Request a quote',human:'Contact sales',
+    notice:'For a quote or confirmed lead times, use the direct contact links below. A short project description is enough to start; drawings and an NDA can follow.',
+    placeholder:'Type your question...',send:'Send',label:'Your question',retry:'Reconnect',quote:'Get a free quote',human:'WhatsApp the factory — usually reply in 24h',
     failed:'Sorry, we could not reply just now. Please try again later, or contact sales using the links below.',limit:'Please keep your question within 2,000 characters.',
-    offlineHint:'Live chat is temporarily offline. For a real quote, use “Request a quote” or “Contact sales” below.',
-    offlineReply:'(Offline mode) Live chat is currently unavailable. Please use “Request a quote” or “Contact sales” below to reach our team.',
+    offlineHint:'The assistant is temporarily offline. Use “Get a free quote” or WhatsApp below to reach the workshop.',
+    offlineReply:'The assistant is currently unavailable. Use “Get a free quote” or WhatsApp below to reach our team. Your message has not been sent to the team.',
     samples:['What do you need for a quote?','What are your mold lead times?','Can you sign an NDA?']
   };
   var style = document.createElement('link');
@@ -30,7 +30,7 @@
     '<div class="ds-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation"></div>' +
     '<div class="ds-samples"></div><p class="ds-notice"></p>' +
     '<form class="ds-form"><label class="ds-sr" for="ds-input"></label><div class="ds-compose"><textarea id="ds-input" rows="2" maxlength="2000"></textarea><button type="submit" class="ds-send"></button></div></form>' +
-    '<div class="ds-actions"><button type="button" class="ds-retry"></button><a class="ds-quote" href="contact.html#rfq"></a><a class="ds-human" target="_blank" rel="noopener" href="https://wa.me/8618122936992"></a></div></section>';
+    '<div class="ds-actions"><button type="button" class="ds-retry"></button><a class="ds-quote" href="contact.html"></a><a class="ds-human" target="_blank" rel="noopener" href="https://wa.me/8618122936992?text=Hello%20DASHAN%2C%20I%20would%20like%20to%20discuss%20a%20project."></a></div></section>';
   document.body.appendChild(host);
   var panel = host.querySelector('#ds-panel'), launch = host.querySelector('.ds-launch');
   var close = host.querySelector('.ds-close'), status = host.querySelector('#ds-status');
@@ -40,7 +40,7 @@
   // 领域知识引导：随每次请求带给 DeepSeek，补齐旧提示词缺失的交期/报价/诚实守则等关键事实。
   var PRIME = [
     { role: 'user', content: 'Remind me of DASHAN Precision\'s key facts for answering buyers.' },
-    { role: 'assistant', content: 'DASHAN Precision (Dongguan, China, founded 2021): production molds about 30-45 days after deposit, samples 5-10 days; quote only after seeing the drawing (free DFM review); never give a price without drawings; always reply in the customer\'s language including Chinese; never claim ISO certification or specific precision numbers. Contact: Xie Wendong, WhatsApp +86 181 2293 6992, xie12240@gmail.com.' }
+    { role: 'assistant', content: 'DASHAN Precision is a mold-making and injection-molding workshop in Dongguan, China. Start with a short project description; do not demand drawings in the first reply. After the conversation starts, offer to discuss drawings and an NDA if needed. Prices and lead times require team confirmation. The team usually replies within 24 hours on working days; this is not a guarantee. Always reply in the customer\'s language including Chinese. Never invent jobs, customers, ISO certification or specific precision claims. Direct contact: Xie Wendong · Owner, WhatsApp +86 181 2293 6992, xie12240@gmail.com.' }
   ];
   launch.textContent = text.open; close.setAttribute('aria-label',text.close); close.title=text.close;
   host.querySelector('#ds-title').textContent=text.title;
@@ -134,8 +134,8 @@
     if(!value||busy||!ready)return;
     if(value.length>2000){message(text.limit,'error');return;}
     busy=true;state(text.busy);message(value,'user');input.value='';
-    if(offlineMode){offlineReply(value);return;}
     host.querySelector('.ds-human').href='https://wa.me/8618122936992?text='+encodeURIComponent('Hello DASHAN, '+value.slice(0,500));
+    if(offlineMode){offlineReply(value);return;}
     try {
       var result=await request(endpoint+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:value,history:PRIME.concat(history.slice(-6))})},55000);
       if(typeof result.reply!=='string'||!result.reply.trim())throw new Error('Empty reply');
