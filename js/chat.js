@@ -22,7 +22,7 @@
     samples:['What do you need for a quote?','What are your mold lead times?','Can you sign an NDA?']
   };
   var style = document.createElement('link');
-  style.rel = 'stylesheet'; style.href = 'css/chat.css'; document.head.appendChild(style);
+  style.rel = 'stylesheet'; style.href = 'css/chat.css?v=20261006-2'; document.head.appendChild(style);
   var host = document.createElement('div'); host.id = 'ds-chat';
   host.innerHTML = '<button type="button" class="ds-launch" aria-expanded="false" aria-controls="ds-panel"></button>' +
     '<section id="ds-panel" role="dialog" aria-labelledby="ds-title" hidden>' +

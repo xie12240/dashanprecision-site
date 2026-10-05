@@ -131,6 +131,8 @@ def main():
         check(nav == NAV, f'{name}: navigation must be {NAV}; found {nav}')
         primary = [anchor for anchor in anchors if 'btn-primary' in classes(anchor)]
         check(bool(primary), f'{name}: missing primary quote CTA')
+        mobile = [anchor for anchor in anchors if any('m-cta' in classes(parent) for parent in anchor['parents'])]
+        check([label(anchor) for anchor in mobile] == [PRIMARY, 'WhatsApp'], f'{name}: mobile contact actions missing or changed')
         for anchor in primary:
             check(anchor['attrs'].get('href') == 'contact.html' and label(anchor) == PRIMARY,
                   f'{name}:{anchor["line"]}: primary CTA label/target changed')
