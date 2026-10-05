@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Interested in: ' + data.get('interest'),
         '', 'Project details:', data.get('message')
       ].join('\n');
-      var draft = 'mailto:xie12240@gmail.com?subject=Drawing%20for%20quote&body=' + encodeURIComponent(body);
+      var draft = 'mailto:quote@dashanprecision.com?subject=Drawing%20for%20quote&body=' + encodeURIComponent(body);
       // ponytail: mailto needs an email app; keep a copyable draft for browsers without one.
       document.getElementById('draft-message').value = body;
       document.getElementById('draft-link').href = draft;
