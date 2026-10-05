@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'js/main.js'), 'utf8');
 const html = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
 assert(!/type=["']file["']|formsubmit|multipart/i.test(html + source));
-assert(html.includes('mailto:xie12240@gmail.com?subject=Drawing%20for%20quote'));
+assert(html.includes('mailto:quote@dashanprecision.com?subject=Drawing%20for%20quote'));
 
 let submit, initialize, valid = true, prevented = false;
 const fields = {
@@ -46,7 +46,7 @@ valid = true;
 submit(event);
 const mail = new URL(window.location.href);
 assert.equal(mail.protocol, 'mailto:');
-assert.equal(mail.pathname, 'xie12240@gmail.com');
+assert.equal(mail.pathname, 'quote@dashanprecision.com');
 assert.equal(mail.searchParams.get('subject'), 'Drawing for quote');
 assert.equal(mail.searchParams.get('body'), elements['draft-message'].value);
 assert(mail.searchParams.get('body').includes(fields.message));

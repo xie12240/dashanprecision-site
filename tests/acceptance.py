@@ -10,7 +10,8 @@ from urllib.parse import parse_qs, unquote, urlsplit
 from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
-EMAIL = 'xie12240@gmail.com'
+EMAIL = 'quote@dashanprecision.com'
+BACKUP_EMAIL = 'xie12240@gmail.com'
 PHONE = '8618122936992'
 PRIMARY = 'Get a free quote'
 WHATSAPP = 'WhatsApp the factory — usually reply in 24h'
@@ -108,7 +109,7 @@ def main():
         check('formsubmit' not in source.lower(), f'{name}: formsubmit remains')
         without_placeholders = re.sub(r'placeholder\s*=\s*([\'"]).*?\1', '', source, flags=re.S)
         for email in set(re.findall(r'[\w.+%-]+@[\w.-]+\.[A-Za-z]{2,}', without_placeholders)):
-            check(email == EMAIL, f'{name}: unexpected contact email {email}')
+            check(email in {EMAIL, BACKUP_EMAIL}, f'{name}: unexpected contact email {email}')
         for phone in re.findall(r'\+86(?:[\s-]*\d){10,}', source):
             check(re.sub(r'\D', '', phone) == PHONE, f'{name}: unexpected contact number {phone}')
         for value in re.findall(r'https?://(?:wa\.me|api\.whatsapp\.com)/[^\s\'"<>]+', source):
@@ -137,10 +138,14 @@ def main():
             check(anchor['attrs'].get('href') == 'contact.html' and label(anchor) == PRIMARY,
                   f'{name}:{anchor["line"]}: primary CTA label/target changed')
         check(EMAIL in source and '+86 181 2293 6992' in source, f'{name}: missing owner contact')
+        check(any(label(anchor) == EMAIL and any(parent['tag'] == 'footer' for parent in anchor['parents'])
+                  for anchor in anchors), f'{name}: footer must display the primary company email')
         for element in page.elements:
             attrs = element['attrs']
             where = f'{name}:{element["line"]}'
             check(not (element['tag'] == 'input' and attrs.get('type', '').lower() == 'file'), f'{where}: file upload input remains')
+            if element['tag'] == 'form' and attrs.get('action', '').startswith('mailto:'):
+                check(urlsplit(attrs['action']).path == EMAIL, f'{where}: form must use primary company email')
             for key in ('src', 'href', 'action', 'poster', 'data-src'):
                 if attrs.get(key):
                     local_reference(path, attrs[key])
@@ -156,7 +161,9 @@ def main():
             if element['tag'] == 'a':
                 href = attrs.get('href', '')
                 if href.startswith('mailto:'):
-                    check(urlsplit(href).path == EMAIL, f'{where}: wrong mailto contact')
+                    backup = any('backup-email' in classes(parent) for parent in element['parents'])
+                    check(urlsplit(href).path == (BACKUP_EMAIL if backup else EMAIL), f'{where}: wrong mailto contact')
+                    check(not backup or path.name == 'contact.html', f'{where}: backup email must remain a secondary contact note')
                 if check_whatsapp(href, where) and 'btn' in classes(element):
                     compact = 'wa-float' in classes(element) or any('m-cta' in classes(parent) for parent in element['parents'])
                     allowed = {WHATSAPP, 'WhatsApp'} if compact else {WHATSAPP}
@@ -165,6 +172,7 @@ def main():
                     if urlsplit(href).path == 'contact.html':
                         check(label(element) == PRIMARY, f'{where}: mobile quote label changed')
             if element['tag'] == 'script' and attrs.get('type') == 'application/ld+json':
+                check(BACKUP_EMAIL not in element['text'], f'{where}: schema must use primary company email')
                 try:
                     json.loads(element['text'])
                 except ValueError as error:

@@ -1,7 +1,13 @@
 (function () {
   'use strict';
   if (document.getElementById('ds-chat')) return;
-  var zh = (function(){ try { if (new URLSearchParams(location.search).get('lang') === 'zh') return true; return localStorage.getItem('dashan_lang') === 'zh'; } catch (e) { return false; } })();
+  var zh = (function () {
+    try {
+      var lang = new URLSearchParams(location.search).get('lang');
+      if (lang === 'en' || lang === 'zh') return lang === 'zh';
+      return localStorage.getItem('dashan_lang') === 'zh';
+    } catch (e) { return false; }
+  })();
   var text = zh ? {
     open:'询盘助手',title:'大山精密询盘助手',close:'关闭助手',checking:'正在连接...',online:'助手已连接',offline:'助手暂时离线',busy:'正在回复...',
     intro:'您好！您想了解模具制造、注塑加工，还是报价所需资料？',
@@ -40,7 +46,7 @@
   // 领域知识引导：随每次请求带给 DeepSeek，补齐旧提示词缺失的交期/报价/诚实守则等关键事实。
   var PRIME = [
     { role: 'user', content: 'Remind me of DASHAN Precision\'s key facts for answering buyers.' },
-    { role: 'assistant', content: 'DASHAN Precision is a mold-making and injection-molding workshop in Dongguan, China. Start with a short project description; do not demand drawings in the first reply. After the conversation starts, offer to discuss drawings and an NDA if needed. Prices and lead times require team confirmation. The team usually replies within 24 hours on working days; this is not a guarantee. Always reply in the customer\'s language including Chinese. Never invent jobs, customers, ISO certification or specific precision claims. Direct contact: Xie Wendong · Owner, WhatsApp +86 181 2293 6992, xie12240@gmail.com.' }
+    { role: 'assistant', content: 'DASHAN Precision is a mold-making and injection-molding workshop in Dongguan, China. Start with a short project description; do not demand drawings in the first reply. After the conversation starts, offer to discuss drawings and an NDA if needed. Prices and lead times require team confirmation. The team usually replies within 24 hours on working days; this is not a guarantee. Always reply in the customer\'s language including Chinese. Never invent jobs, customers, ISO certification or specific precision claims. Direct contact: Xie Wendong · Owner, WhatsApp +86 181 2293 6992. Primary inquiry email: quote@dashanprecision.com. Owner backup email: xie12240@gmail.com.' }
   ];
   launch.textContent = text.open; close.setAttribute('aria-label',text.close); close.title=text.close;
   host.querySelector('#ds-title').textContent=text.title;

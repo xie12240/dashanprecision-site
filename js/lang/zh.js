@@ -384,5 +384,6 @@ window.I18N_DICTS.zh = {
 "Molds + plastic parts": "模具与塑料零件",
 "Precision molds and plastic parts from our Dongguan workshop.": "来自我们东莞车间的精密模具与塑料零件。",
 "Your name": "您的姓名",
+"Backup email (owner):": "备用邮箱（负责人）：",
 "大山精密科技有限公司 · Hengli, Dongguan, Guangdong, China": "大山精密科技有限公司 · 中国广东东莞横沥"
 };
