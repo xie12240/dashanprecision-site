@@ -31,8 +31,8 @@
 #ds-chat.ds-offline .ds-send{background:#8a9ba8;color:#1c2733}
 .rfq-demo-note{font-size:13px;line-height:1.5;color:#8a5a17;background:#fff6e6;border:1px solid #e8c98a;border-radius:6px;padding:10px 12px;margin:12px 0 0}
 @media(max-width:680px){
-  #ds-chat .ds-launch{bottom:78px;right:12px}
-  #ds-panel{inset:12px 12px 76px;width:auto;height:auto;max-width:none;max-height:none}
+  #ds-chat .ds-launch{bottom:100px;right:12px}
+  #ds-panel{inset:12px 12px 96px;width:auto;height:auto;max-width:none;max-height:none}
   .ds-chat-open #ds-chat .ds-launch{display:none}
 }
 @media(max-height:550px){#ds-chat .ds-samples{display:none}#ds-panel{top:8px;max-height:none;overflow-y:auto}#ds-chat .ds-log{flex:none;min-height:100px;max-height:140px}#ds-chat .ds-head{padding:8px 14px}#ds-panel>*{flex-shrink:0}}
