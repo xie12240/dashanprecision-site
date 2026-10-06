@@ -137,7 +137,7 @@ window.I18N_DICTS.zh = {
 "How do you keep my drawings and design confidential?": "你们如何保证图纸与设计保密？",
 "Your data is treated as confidential. We can sign an NDA before we receive drawings if your company requires it.": "您的资料会保密处理。如果贵公司有要求，我们可以在收到图纸前签署 NDA。",
 "What are your payment and trade terms?": "付款与贸易条款是什么？",
-"As a reference, our quotation uses EXW Dongguan with 100% T/T in advance; freight and customs are arranged by the buyer. Other terms can be discussed for repeat or larger orders.": "供参考：报价为 EXW 东莞、100% T/T 预付；运费与清关由买方安排。老客户或较大订单可另行商议。",
+"Tooling: 50% T/T deposit to start the mold, 50% balance after you approve the first samples. Production: 50% T/T deposit, balance before shipment. Prices are EXW Dongguan; FOB or other terms can be quoted on request.": "模具：支付 50% T/T 定金后启动模具制作，您确认首批样品后支付剩余 50% 尾款。生产：支付 50% T/T 定金，余款在发货前付清。价格为 EXW 东莞；可按要求提供 FOB 或其他贸易条款的报价。",
 "What plastic materials can you mold?": "你们能成型哪些塑料材料？",
 "We mold a broad range of thermoplastics and engineering materials. Send us your part requirements (material, color, application) and we will confirm suitability and recommend options.": "我们能成型多种热塑性塑料与工程材料。请把您的零件要求（材料、颜色、用途）发给我们，我们会确认适用性并推荐方案。",
 "Can I visit or inspect your factory?": "我可以参观或验厂吗？",
