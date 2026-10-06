@@ -18,7 +18,7 @@
     offlineReply:'助手暂不可用。您的消息尚未发送给车间，请通过下方“获取免费报价”或 WhatsApp 入口与我们沟通。',
     samples:['报价需要什么资料？','模具交期多久？','能签保密协议吗？']
   } : {
-    open:'Ask the workshop',title:'DASHAN inquiry assistant',close:'Close assistant',checking:'Connecting...',online:'Connected',offline:'Currently offline',busy:'Replying...',
+    open:'Ask the workshop',title:'Dashan Precision inquiry assistant',close:'Close assistant',checking:'Connecting...',online:'Connected',offline:'Currently offline',busy:'Replying...',
     intro:'Hello! How can I help with mold making, injection molding, or preparing a quote request?',
     notice:'For a quote or confirmed lead times, use the direct contact links below. A short project description is enough to start; drawings and an NDA can follow.',
     placeholder:'Type your question...',send:'Send',label:'Your question',retry:'Reconnect',quote:'Get a free quote',human:'WhatsApp the factory — usually reply in 24h',
@@ -36,7 +36,7 @@
     '<div class="ds-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation"></div>' +
     '<div class="ds-samples"></div><p class="ds-notice"></p>' +
     '<form class="ds-form"><label class="ds-sr" for="ds-input"></label><div class="ds-compose"><textarea id="ds-input" rows="2" maxlength="2000"></textarea><button type="submit" class="ds-send"></button></div></form>' +
-    '<div class="ds-actions"><button type="button" class="ds-retry"></button><a class="ds-quote" href="contact.html"></a><a class="ds-human" target="_blank" rel="noopener" href="https://wa.me/8618122936992?text=Hello%20DASHAN%2C%20I%20would%20like%20to%20discuss%20a%20project."></a></div></section>';
+    '<div class="ds-actions"><button type="button" class="ds-retry"></button><a class="ds-quote" href="contact.html"></a><a class="ds-human" target="_blank" rel="noopener" href="https://wa.me/8618122936992?text=Hello%20Dashan%20Precision%2C%20I%20would%20like%20to%20discuss%20a%20project."></a></div></section>';
   document.body.appendChild(host);
   var panel = host.querySelector('#ds-panel'), launch = host.querySelector('.ds-launch');
   var close = host.querySelector('.ds-close'), status = host.querySelector('#ds-status');
@@ -45,8 +45,8 @@
   var history = [], endpoint = '', busy = false, ready = false, connecting = false, offlineMode = false, offlineAnnounced = false;
   // 领域知识引导：随每次请求带给 DeepSeek，补齐旧提示词缺失的交期/报价/诚实守则等关键事实。
   var PRIME = [
-    { role: 'user', content: 'Remind me of DASHAN Precision\'s key facts for answering buyers.' },
-    { role: 'assistant', content: 'DASHAN Precision is a mold-making and injection-molding workshop in Dongguan, China. Start with a short project description; do not demand drawings in the first reply. After the conversation starts, offer to discuss drawings and an NDA if needed. Prices and lead times require team confirmation. The team usually replies within 24 hours on working days; this is not a guarantee. Always reply in the customer\'s language including Chinese. Never invent jobs, customers, ISO certification or specific precision claims. Direct contact: Xie Wendong · Owner, WhatsApp +86 181 2293 6992. Primary inquiry email: quote@dashanprecision.com. Owner backup email: xie12240@gmail.com.' }
+    { role: 'user', content: 'Remind me of Dashan Precision\'s key facts for answering buyers.' },
+    { role: 'assistant', content: 'Dashan Precision is a mold-making and injection-molding workshop in Dongguan, China. Start with a short project description; do not demand drawings in the first reply. After the conversation starts, offer to discuss drawings and an NDA if needed. Prices and lead times require team confirmation. The team usually replies within 24 hours on working days; this is not a guarantee. Always reply in the customer\'s language including Chinese. Never invent jobs, customers, ISO certification or specific precision claims. Direct contact: Xie Wendong · Owner, WhatsApp +86 181 2293 6992. Primary inquiry email: quote@dashanprecision.com. Owner backup email: xie12240@gmail.com.' }
   ];
   launch.textContent = text.open; close.setAttribute('aria-label',text.close); close.title=text.close;
   host.querySelector('#ds-title').textContent=text.title;
@@ -140,7 +140,7 @@
     if(!value||busy||!ready)return;
     if(value.length>2000){message(text.limit,'error');return;}
     busy=true;state(text.busy);message(value,'user');input.value='';
-    host.querySelector('.ds-human').href='https://wa.me/8618122936992?text='+encodeURIComponent('Hello DASHAN, '+value.slice(0,500));
+    host.querySelector('.ds-human').href='https://wa.me/8618122936992?text='+encodeURIComponent('Hello Dashan Precision, '+value.slice(0,500));
     if(offlineMode){offlineReply(value);return;}
     try {
       var result=await request(endpoint+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:value,history:PRIME.concat(history.slice(-6))})},55000);

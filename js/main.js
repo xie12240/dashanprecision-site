@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // chat.js is loaded once by the page's existing script tag.
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('header .nav > ul');
   if (toggle && menu) {
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Interested in: ' + data.get('interest'),
         '', 'Project details:', data.get('message')
       ].join('\n');
-      var draft = 'mailto:quote@dashanprecision.com?subject=Drawing%20for%20quote&body=' + encodeURIComponent(body);
+      var draft = 'mailto:quote@dashanprecision.com?subject=Quote%20inquiry%20from%20website&body=' + encodeURIComponent(body);
       // ponytail: mailto needs an email app; keep a copyable draft for browsers without one.
       document.getElementById('draft-message').value = body;
       document.getElementById('draft-link').href = draft;
