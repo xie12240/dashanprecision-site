@@ -73,7 +73,7 @@ window.I18N_DICTS.zh = {
 "Your Name *": "您的姓名 *",
 "Company": "公司",
 "Email *": "电子邮箱 *",
-"WhatsApp / Phone": "WhatsApp / 电话",
+"Phone": "电话",
 "I'm interested in": "我感兴趣的是",
 "Precision injection mold": "精密注塑模具",
 "Injection molding service": "注塑加工服务",

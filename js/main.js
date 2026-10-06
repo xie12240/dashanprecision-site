@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Name: ' + data.get('name'),
         'Company: ' + (data.get('company') || ''),
         'Email: ' + data.get('email'),
-        'WhatsApp / Phone: ' + (data.get('whatsapp') || ''),
+        'Phone: ' + (data.get('whatsapp') || ''),
         'Interested in: ' + data.get('interest'),
         '', 'Project details:', data.get('message')
       ].join('\n');
