@@ -31,37 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var shortcut = document.querySelector('.wa-float');
-  var content = document.querySelector('main');
-  if (shortcut && content) {
-    function keepShortcutClear() {
-      if (getComputedStyle(shortcut).display === 'none') {
-        shortcut.style.visibility = '';
-        return;
-      }
-      var bounds = shortcut.getBoundingClientRect();
-      function overlaps(rect) {
-        return rect.width && rect.height && rect.left < bounds.right && rect.right > bounds.left
-          && rect.top < bounds.bottom && rect.bottom > bounds.top;
-      }
-      var blocked = Array.prototype.some.call(content.querySelectorAll('a,button,input,select,textarea'), function (element) {
-        return Array.prototype.some.call(element.getClientRects(), overlaps);
-      });
-      var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
-      var range = document.createRange();
-      while (!blocked && walker.nextNode()) {
-        var node = walker.currentNode;
-        if (!node.textContent.trim() || node.parentElement.closest('script,style,[hidden]')) continue;
-        range.selectNodeContents(node);
-        blocked = Array.prototype.some.call(range.getClientRects(), overlaps);
-      }
-      shortcut.style.visibility = blocked ? 'hidden' : '';
-    }
-    window.addEventListener('scroll', keepShortcutClear, { passive: true });
-    window.addEventListener('resize', keepShortcutClear);
-    requestAnimationFrame(keepShortcutClear);
-  }
-
   var form = document.getElementById('rfq');
   if (form) {
     form.addEventListener('submit', function (event) {
