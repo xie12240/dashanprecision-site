@@ -131,7 +131,7 @@ window.I18N_DICTS.zh = {
 "Do you make both the mold and the parts?": "模具和注塑件你们都能做吗？",
 "Yes. We are a one-stop partner: precision mold making, injection molding and CNC-machined parts. You can order a mold only, molding only, or full turnkey (mold + mass production).": "可以。我们是一站式合作伙伴：精密模具制造、注塑成型与 CNC 机加工零件。您可以只订模具、只订注塑，或全包（模具 + 量产）。",
 "What is your typical lead time?": "你们通常的交期是多久？",
-"As a reference, our quotation states production in about 30-45 days after deposit; samples usually take about 5-10 days. Exact timing depends on mold complexity and is confirmed with your order.": "供参考：按报价单，付定金后量产约 30–45 天；试样通常约 5–10 天。确切时间取决于模具复杂程度，并以订单确认为准。",
+"As a reference, molds (tooling) take about 30-45 days after deposit; samples usually take about 5-10 days. Exact timing depends on mold complexity and is confirmed with your order.": "供参考：开模约 30-45 天（收到定金后），样品约 5-10 天。确切时间取决于模具复杂程度，并以订单确认为准。",
 "What is your MOQ?": "起订量（MOQ）是多少？",
 "MOQ depends on the product and is stated per quotation. For genuine first orders we can discuss a smaller trial quantity. Tell us your project and we will be specific.": "起订量取决于产品，按报价单注明。真实的首单可商量更小的试单数量。告诉我们您的项目，我们会给出具体答复。",
 "How do you keep my drawings and design confidential?": "你们如何保证图纸与设计保密？",
